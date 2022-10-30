@@ -17,9 +17,9 @@ import os
 
 def hetero_seucre_boost_host():
 
-    train_data_path = os.path.join("data/sell/host_train.csv")
-    test_data_path = os.path.join("data/sell/host_test.csv")
-    guest_ip = '192.168.1.2'
+    train_data_path = os.path.join("./data/host_train.csv")
+    test_data_path = os.path.join("./data/host_test.csv")
+    guest_ip = '127.0.0.1'
     port = 11111
     run_time_idx = 0
 

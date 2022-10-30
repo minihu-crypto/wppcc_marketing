@@ -16,8 +16,8 @@ import pandas as pd
 
 def hetero_secure_boost_guest_main():
 
-    train_data_path = os.path.join("data/sell/guest_train.csv")
-    test_data_path = os.path.join("data/sell/guest_test.csv")
+    train_data_path = os.path.join("./data/guest_train.csv")
+    test_data_path = os.path.join("./data/guest_test.csv")
     port = 11111
 
     # 实际传参过程
