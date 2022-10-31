@@ -1,0 +1,9 @@
+log:
+  level: "INFO"
+
+host: "127.0.0.1"
+port: 2345
+#data: "client_data.txt"
+#result: "client_result.txt
+data: "data_A.csv"
+result: "data_A_result.csv"

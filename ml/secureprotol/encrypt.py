@@ -122,7 +122,7 @@ class RsaEncrypt(Encrypt):
         self.d = None
         self.n = None
 
-    def generate_key(self, rsa_bit=1024):
+    def generate_key(self, rsa_bit=3072):
         random_generator = Random.new().read
         rsa = RSA.generate(rsa_bit, random_generator)
         self.e = rsa.e
@@ -215,7 +215,7 @@ class AffineEncrypt(SymmetricEncrypt):
     def __init__(self):
         super(AffineEncrypt, self).__init__()
 
-    def generate_key(self, key_size=1024):
+    def generate_key(self, key_size=3072):
         self.key = AffineCipher.generate_keypair(key_size=key_size)
 
     def encrypt(self, plaintext):

@@ -11,7 +11,7 @@ def get_feature(fid, fid_map, data):
         if fid_map[fname] == fid:
             return data[fname]  
 
-def predict(model_path = "model.npy", test_path = "./data/sell/test.csv"):
+def predict(model_path = "model.npy", test_path = "./data/test.csv"):
     model = np.load(model_path, allow_pickle=True).item()
     test_data = pd.read_csv(test_path)
     # predict每个样本
@@ -47,7 +47,12 @@ def predict(model_path = "model.npy", test_path = "./data/sell/test.csv"):
                     is_leaf = True
             result += tree[node_id]['weight']
         y_pred.append(result)
-    test_label = pd.read_csv("./data/sell/test_label.csv")
+    test_label = pd.read_csv("./data/test_label.csv")
+    st = set()
+    for y in y_pred:
+        if y not in st:
+            st.add(y)
+    print(st)
     print(roc_auc_score(test_label, y_pred))
 
 

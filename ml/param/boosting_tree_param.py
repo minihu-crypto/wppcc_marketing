@@ -100,7 +100,7 @@ class DecisionTreeParam(BaseParam):
     tol: float, only use when n_iter_no_change is set to True, default: 0.001
     """
 
-    def __init__(self, criterion_method="xgboost", criterion_params=[0.1], max_depth=5,
+    def __init__(self, criterion_method="xgboost", criterion_params=[0.1], max_depth=10,
                  min_sample_split=2, min_imputiry_split=1e-3, min_leaf_node=1,
                  max_split_nodes=consts.MAX_SPLIT_NODES, feature_importance_type="split",
                  n_iter_no_change=True, tol=0.001):

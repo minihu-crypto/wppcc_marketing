@@ -497,15 +497,15 @@ class HeteroDecisionTreeGuest(DecisionTree):
                 final_splitinfo_host = self.sync_final_split_host(dep, batch)
 
                 cur_splitinfos = self.merge_splitinfo(self.best_splitinfo_guest, final_splitinfo_host)
-                print(cur_splitinfos)
+                # print(cur_splitinfos)
                 splitinfos.extend(cur_splitinfos)
 
                 batch += 1
 
             max_depth_reach = True if dep + 1 == self.max_depth else False
-            print(splitinfos)
-            for item in splitinfos:
-                print(item)
+            # print(splitinfos)
+            # for item in splitinfos:
+            #     print(item)
             self.update_tree_node_queue(splitinfos, max_depth_reach)
 
             self.redispatch_node(dep)

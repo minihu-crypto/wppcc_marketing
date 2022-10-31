@@ -1,0 +1,9 @@
+log:
+  level: "INFO"
+
+host: "127.0.0.1"
+port: 1234
+#data: "server_data.txt"
+#result: "server_result.txt"
+data: "data_B.csv"
+result: "data_B_result.csv"

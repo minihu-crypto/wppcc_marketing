@@ -312,7 +312,7 @@ class HeteroSecureBoostingTreeGuest(BoostingTree):
                 tree_inst = HeteroDecisionTreeGuest(self.tree_param)
                 tree_inst.load_model(self.tree_meta, self.trees_[i * self.tree_dim + tidx])
                 # tree_inst.set_tree_model(self.trees_[i * self.tree_dim + tidx])
-                print(tree_inst.best_splitinfo_guest)
+                # print(tree_inst.best_splitinfo_guest)
                 tree_inst.set_flowid(self.generate_flowid(i, tidx))
                 tree_inst.set_transfer_inst(self.transfer_inst)
 
@@ -405,7 +405,7 @@ class HeteroSecureBoostingTreeGuest(BoostingTree):
                 if node.right_nodeid != -1:
                     queue.append(tree.tree_[node.right_nodeid])
             trees.append(tree_queue)
-        print(trees)        
+        # print(trees)        
         model["trees"] = trees
 
 

@@ -19,28 +19,21 @@ def read_from_csv_with_lable(csv_address: str):
         list of features
     lables:
         list of lable
-
-    Notes
-    -----
-    the first column of the csv file will be recognized as the id_col
-    the second column of the csv file will be recognized as the lable_col
     """
 
     rows = []
-
     with open(csv_address) as file:
         for line in file:
             rows.append(line.rstrip("\n"))
     
     header = rows[0].split(',')
-
+    
     lable_pos = header.index('y')
-    # lable_pos = 1
-    header.pop(lable_pos)
-
     id_pos = header.index('id')
-    # id_pos = 0
+    header.pop(lable_pos)
     header.pop(id_pos)
+    
+
     features = []
     lables = []
     ids = []
@@ -86,10 +79,11 @@ def read_from_csv_with_no_lable(csv_address: str):
             rows.append(line.rstrip("\n"))
     
     header = rows[0].split(',')
+    
 
-    # id_pos = header.index('id')
-    id_pos = 0
+    id_pos = header.index('id')
     header.pop(id_pos)
+
 
     features = []
     ids = []

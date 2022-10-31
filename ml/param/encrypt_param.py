@@ -33,12 +33,12 @@ class EncryptParam(BaseParam):
         To use non-encryption version in HomoLR, just set this parameter to be any other str.
         For detail of Paillier encryption, please check out the paper mentioned in README file.
 
-    key_length : int, default: 1024
+    key_length : int, default: 3072
         Used to specify the length of key in this encryption method. Only needed when method is 'Paillier'
 
     """
 
-    def __init__(self, method=consts.PAILLIER, key_length=3072):
+    def __init__(self, method=consts.PAILLIER, key_length=1024):
         super(EncryptParam, self).__init__()
         self.method = method
         self.key_length = key_length
